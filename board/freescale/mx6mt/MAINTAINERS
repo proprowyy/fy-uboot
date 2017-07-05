@@ -1,0 +1,9 @@
+MX6MT BOARD
+M:	Leo liu <Leo.liu@coosine.com>
+S:	Maintained
+F:	board/freescale/mx6mt/
+F:	include/configs/mx6sabresd.h
+F:	configs/mx6dlsabresd_defconfig
+F:	configs/mx6qsabresd_defconfig
+F:	configs/mx6sabresd_spl_defconfig
+F:	configs/mx6solo_mt_defconfig

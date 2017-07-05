@@ -1,0 +1,12 @@
+if TARGET_MX6MT
+
+config SYS_BOARD
+	default "mx6mt"
+
+config SYS_VENDOR
+	default "freescale"
+
+config SYS_CONFIG_NAME
+	default "mx6mt"
+
+endif
