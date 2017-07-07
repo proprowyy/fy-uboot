@@ -25,9 +25,11 @@
 #include <asm/io.h>
 #include <asm/arch/sys_proto.h>
 #include <i2c.h>
+
 #include <power/pmic.h>
 #include <power/pfuze100_pmic.h>
 #include "../common/pfuze.h"
+
 #include <asm/arch/mx6-ddr.h>
 #include <usb.h>
 #if defined(CONFIG_MX6DL) && defined(CONFIG_MXC_EPDC)
@@ -928,6 +930,7 @@ int board_init(void)
 
 int power_init_board(void)
 {
+#ifdef CONFIG_POWER_PFUZE100
 	struct pmic *pfuze;
 	unsigned int reg;
 	int ret;
@@ -1007,7 +1010,7 @@ int power_init_board(void)
 		reg |= 0x40;
 		pmic_reg_write(pfuze, PFUZE100_SW1CCONF, reg);
 	}
-
+#endif
 	return 0;
 }
 

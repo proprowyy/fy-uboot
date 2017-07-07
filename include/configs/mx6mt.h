@@ -27,10 +27,17 @@
 #elif defined(CONFIG_MX6DL)
 #define PHYS_SDRAM_SIZE		(1u * 1024 * 1024 * 1024)
 #elif defined(CONFIG_MX6SOLO)
-#define PHYS_SDRAM_SIZE		(512u * 1024 * 1024)
+// #define PHYS_SDRAM_SIZE		(512u * 1024 * 1024)
+#define PHYS_SDRAM_SIZE		(1u * 1024 * 1024 * 1024)
 #endif
 
-#include "mx6sabre_common.h"
+/* #include "mx6sabre_common.h"
+*/
+#include "mx6mt_common.h"
+
+#ifdef CONFIG_TARGET_MX6MT
+#undef CONFIG_LDO_BYPASS_CHECK
+#endif
 
 #define CONFIG_SYS_FSL_USDHC_NUM	3
 #define CONFIG_SYS_MMC_ENV_DEV		1	/* SDHC3 */
