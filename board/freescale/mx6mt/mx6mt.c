@@ -930,7 +930,7 @@ int board_init(void)
 
 int power_init_board(void)
 {
-#ifdef CONFIG_POWER_PFUZE100
+
 	struct pmic *pfuze;
 	unsigned int reg;
 	int ret;
@@ -1010,7 +1010,6 @@ int power_init_board(void)
 		reg |= 0x40;
 		pmic_reg_write(pfuze, PFUZE100_SW1CCONF, reg);
 	}
-#endif
 	return 0;
 }
 

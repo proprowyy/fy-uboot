@@ -1,0 +1,25 @@
+diff --git a/board/freescale/mx6mt/mx6mt.c b/board/freescale/mx6mt/mx6mt.c
+index 315178b..45664ca 100755
+--- a/board/freescale/mx6mt/mx6mt.c
++++ b/board/freescale/mx6mt/mx6mt.c
+@@ -87,6 +87,7 @@ DECLARE_GLOBAL_DATA_PTR;
+ int dram_init(void)
+ {
+ 	gd->ram_size = imx_ddr_size();
++	//gd->ram_size = PHYS_SDRAM_SIZE;
+ 	return 0;
+ }
+ 
+diff --git a/include/configs/mx6sabresd.h b/include/configs/mx6sabresd.h
+index d8fe320..338beb9 100644
+--- a/include/configs/mx6sabresd.h
++++ b/include/configs/mx6sabresd.h
+@@ -27,7 +27,7 @@
+ #elif defined(CONFIG_MX6DL)
+ #define PHYS_SDRAM_SIZE		(1u * 1024 * 1024 * 1024)
+ #elif defined(CONFIG_MX6SOLO)
+-#define PHYS_SDRAM_SIZE		(512u * 1024 * 1024)
++#define PHYS_SDRAM_SIZE		SZ_1G
+ #endif
+ 
+ #include "mx6sabre_common.h"
